@@ -57,7 +57,7 @@ sf.write('exp-1/noisy_stream2_SNR_0.wav', noisy_stream.T, sr)
 
 #################################################################################################
 #Step 4: adding Noise to reverberated speech
-dir_path = Path('CND/reverb/50')
+dir_path = Path('CND/reverb/700')
 files = list(dir_path.glob('*.wav'))  # file types to be fetched from directory
 
 num = 0
@@ -68,6 +68,6 @@ for file in files:
     snr_db = 15  # Desired SNR in dB
     noisy_speech, sr = n2.add_noise_to_multichannel_signal(speech_file, noise_file, snr_db)
     # Save the noisy speech to a new file
-    sf.write(f'CND/noisy/50/train/15/MC_noise{num}.wav', noisy_speech.T, sr)
+    sf.write(f'CND/noisy/700/train/15/MC_noise{num}.wav', noisy_speech.T, sr)
 #################################################################################################
 print ('complex noisy data created successfully....')
